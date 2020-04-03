@@ -6,9 +6,9 @@ import {
   selectError,
   selectLoading,
   loadListings,
-} from "./listingsSlice";
+} from "../../data/listingsSlice";
 
-export const ListingList = () => {
+export const ListingListPage = () => {
   const listings = useSelector(selectListings);
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);

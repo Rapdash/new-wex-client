@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import listingsReducer from '../pages/ListingList/listingsSlice';
+import listingsReducer from '../data/listingsSlice';
 
 export default configureStore({
   reducer: {
