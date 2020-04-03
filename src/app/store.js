@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import listingsReducer from '../pages/ListingList/listingSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    listings: listingsReducer
   },
 });
