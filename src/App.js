@@ -5,6 +5,7 @@ import { ListingList } from "./pages/ListingList";
 function App() {
   return (
     <BrowserRouter>
+      
       <Route path="/listings" component={ListingList} />
     </BrowserRouter>
   );
