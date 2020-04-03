@@ -36,8 +36,8 @@ export const loadListings = () => (dispatch) => {
     });
 };
 
-export const selectListings = state => state.listings.list;
-export const selectLoading = state => state.listings.loading;
-export const selectError = state => state.listings.error;
+export const selectListings = (state) => state.listings.list;
+export const selectLoading = (state) => state.listings.loading;
+export const selectError = (state) => state.listings.error;
 
 export default slice.reducer;
