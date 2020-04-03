@@ -4,22 +4,22 @@ import { slice } from "../../features/counter/counterSlice";
 export const listingSlice = createSlice({
   name: "listings",
   initialState: {
-    listings: [],
+    list: [],
     loading: true,
     error: null,
   },
   reducers: {
     addListing: (state, action) => {
-      state.listings = [action.payload, ...state.listings];
+      state.list = [action.payload, ...state.listings];
     },
     addManyListings: (state, action) => {
-      state.listings = action.payload;
+      state.list = action.payload;
       state.loading = false;
     },
     setError: (state, action) => {
       state.error = action.payload;
       state.loading = false;
-      state.listings = [];
+      state.list = [];
     },
   },
 });
@@ -36,6 +36,8 @@ export const loadListings = () => (dispatch) => {
     });
 };
 
-export const selectListings = state => state.listings.listings;
+export const selectListings = state => state.listings.list;
+export const selectLoading = state => state.listings.loading;
+export const selectError = state => state.listings.error;
 
 export default slice.reducer;
