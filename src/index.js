@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { App } from './App';
 import store from './data/store';
 import { Provider } from 'react-redux';
 import { configureAxios } from "./data/configureAxios";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 configureAxios();
 

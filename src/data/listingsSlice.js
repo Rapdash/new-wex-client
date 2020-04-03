@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { slice } from "../../features/counter/counterSlice";
+import Axios from "axios";
 
 export const listingSlice = createSlice({
   name: "listings",
@@ -27,17 +27,17 @@ export const listingSlice = createSlice({
 export const { addListing, addManyListings, setError } = listingSlice.actions;
 
 export const loadListings = () => (dispatch) => {
-  fetch(`${process.env.REACT_APP_API_ROOT}/listings`)
-    .then((listings) => {
-      dispatch(addManyListings(listings));
+  Axios.get(`${process.env.REACT_APP_API_ROOT}/listings`)
+    .then(res => {
+      dispatch(addManyListings(res.data));
     })
-    .catch((error) => {
+    .catch(error => {
       dispatch(setError(error.message));
-    });
+    })
 };
 
 export const selectListings = (state) => state.listings.list;
 export const selectLoading = (state) => state.listings.loading;
 export const selectError = (state) => state.listings.error;
 
-export default slice.reducer;
+export default listingSlice.reducer;

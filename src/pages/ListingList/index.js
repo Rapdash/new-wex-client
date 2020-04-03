@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   selectListings,
@@ -12,12 +12,19 @@ export const ListingListPage = () => {
   const listings = useSelector(selectListings);
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    loadListings();
-  }, []);
+    dispatch(loadListings())
+  }, [dispatch]);
 
   if (loading) {
     return <h1 className="text-center">Loading...</h1>;
+  }
+  if (error) {
+    return <h1 className="text-center">Error: {error}</h1>;
+  }
+  if (listings) {
+    return <div />
   }
 };

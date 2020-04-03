@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { ListingList } from "./pages/ListingList";
+import { ListingListPage } from "./pages/ListingList";
 
-function App() {
+export function App() {
   return (
     <BrowserRouter>
       
-      <Route path="/listings" component={ListingList} />
+      <Route path="/listings" component={ListingListPage} />
     </BrowserRouter>
   );
 }
-
-export default App;
