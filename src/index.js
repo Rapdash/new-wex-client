@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import store from './data/store';
 import { Provider } from 'react-redux';
+import { configureAxios } from "./data/configureAxios";
+
+configureAxios();
 
 ReactDOM.render(
   <Provider store={store}>
